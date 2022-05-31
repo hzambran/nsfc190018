@@ -1,0 +1,228 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+
+	
+	<!-- Require Leaflet -->
+	<!-- Load leaflet for R-->
+
+<script src="https://rstudio.github.io/leaflet/libs/jquery/jquery.min.js"></script>
+<link href="https://rstudio.github.io/leaflet/libs/bootstrap/css/flatly.min.css" rel="stylesheet" />
+<script src="https://rstudio.github.io/leaflet/libs/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://rstudio.github.io/leaflet/libs/bootstrap/shim/html5shiv.min.js"></script>
+<script src="https://rstudio.github.io/leaflet/libs/bootstrap/shim/respond.min.js"></script>
+<script src="https://rstudio.github.io/leaflet/libs/navigation/tabsets.js"></script>
+<link href="https://rstudio.github.io/leaflet/libs/highlightjs/default.css" rel="stylesheet" />
+<script src="https://rstudio.github.io/leaflet/libs/highlightjs/highlight.js"></script>
+<script src="https://rstudio.github.io/leaflet/libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="https://rstudio.github.io/leaflet/libs/leaflet/leaflet.css" rel="stylesheet" />
+<script src="https://rstudio.github.io/leaflet/libs/leaflet/leaflet.js"></script>
+<link href="https://rstudio.github.io/leaflet/libs/leafletfix/leafletfix.css" rel="stylesheet" />
+<script src="https://rstudio.github.io/leaflet/libs/Proj4Leaflet/proj4-compressed.js"></script>
+<script src="https://rstudio.github.io/leaflet/libs/Proj4Leaflet/proj4leaflet.js"></script>
+<link href="https://rstudio.github.io/leaflet/libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
+<script src="https://rstudio.github.io/leaflet/libs/leaflet-binding/leaflet.js"></script>
+<link href="https://rstudio.github.io/leaflet/libs/leaflet-measure/leaflet-measure.css" rel="stylesheet" />
+<script src="https://rstudio.github.io/leaflet/libs/leaflet-measure/leaflet-measure.min.js"></script>
+<script src="https://rstudio.github.io/leaflet/libs/leaflet-graticule/L.Graticule.js"></script>
+<script src="https://rstudio.github.io/leaflet/libs/leaflet-graticule/Graticule-binding.js"></script>
+<script src="https://rstudio.github.io/leaflet/libs/leaflet-terminator/L.Terminator.js"></script>
+<script src="https://rstudio.github.io/leaflet/libs/leaflet-terminator/Terminator-binding.js"></script>
+<script src="https://rstudio.github.io/leaflet/libs/leaflet-providers/leaflet-providers_1.9.0.js"></script>
+<script src="https://rstudio.github.io/leaflet/libs/leaflet-providers-plugin/leaflet-providers-plugin.js"></script>
+<link href="https://rstudio.github.io/leaflet/libs/leaflet-minimap/Control.MiniMap.min.css" rel="stylesheet" />
+<script src="https://rstudio.github.io/leaflet/libs/leaflet-minimap/Control.MiniMap.min.js"></script>
+<script src="https://rstudio.github.io/leaflet/libs/leaflet-minimap/Minimap-binding.js"></script>
+<link href="https://rstudio.github.io/leaflet/libs/leaflet-easybutton/easy-button.css" rel="stylesheet" />
+<script src="https://rstudio.github.io/leaflet/libs/leaflet-easybutton/easy-button.js"></script>
+<script src="https://rstudio.github.io/leaflet/libs/leaflet-easybutton/EasyButton-binding.js"></script>
+<link href="https://rstudio.github.io/leaflet/libs/leaflet-markercluster/MarkerCluster.css" rel="stylesheet" />
+<link href="https://rstudio.github.io/leaflet/libs/leaflet-markercluster/MarkerCluster.Default.css" rel="stylesheet" />
+<script src="https://rstudio.github.io/leaflet/libs/leaflet-markercluster/leaflet.markercluster.js"></script>
+<script src="https://rstudio.github.io/leaflet/libs/leaflet-markercluster/leaflet.markercluster.freezable.js"></script>
+<script src="https://rstudio.github.io/leaflet/libs/leaflet-markercluster/leaflet.markercluster.layersupport.js"></script>
+<link href="https://rstudio.github.io/leaflet/libs/ionicons/ionicons.min.css" rel="stylesheet" />
+
+<script src="https://r-spatial.github.io/mapview/articles/articles/mapview_02-advanced_files/htmlwidgets-1.3/htmlwidgets.js"></script>
+<script src="https://r-spatial.github.io/mapview/articles/articles/mapview_02-advanced_files/jquery-1.12.4/jquery.min.js">
+<script src="https://r-spatial.github.io/mapview/articles/articles/mapview_02-advanced_files/leaflet-1.3.1/leaflet.js"></script>
+<link href="https://r-spatial.github.io/mapview/articles/articles/mapview_02-advanced_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+<script src="https://r-spatial.github.io/mapview/articles/articles/mapview_02-advanced_files/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="https://r-spatial.github.io/mapview/articles/articles/mapview_02-advanced_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="https://r-spatial.github.io/mapview/articles/articles/mapview_02-advanced_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+<script src="https://r-spatial.github.io/mapview/articles/articles/mapview_02-advanced_files/leaflet-binding-2.0.2/leaflet.js"></script>
+<script src="https://r-spatial.github.io/mapview/articles/articles/mapview_02-advanced_files/leaflet-providers-1.1.17/leaflet-providers.js"></script>
+<script src="https://r-spatial.github.io/mapview/articles/articles/mapview_02-advanced_files/leaflet-providers-plugin-2.0.2/leaflet-providers-plugin.js"></script>
+<script src="https://r-spatial.github.io/mapview/articles/articles/mapview_02-advanced_files/kiliNDVI1-1/data_stars_kiliNDVI18c2973.txt"></script>
+<script src="https://r-spatial.github.io/mapview/articles/articles/mapview_02-advanced_files/joda-0.0.1/joda.js"></script>
+<!-- <link href="https://r-spatial.github.io/mapview/articles/articles/mapview_02-advanced_files/HomeButton-0.0.1/home-button.css" rel="stylesheet"> -->
+<!-- <script src="https://r-spatial.github.io/mapview/articles/articles/mapview_02-advanced_files/HomeButton-0.0.1/home-button.js"></script> -->
+<!-- <script src="https://r-spatial.github.io/mapview/articles/articles/mapview_02-advanced_files/HomeButton-0.0.1/easy-button-src.min.js"></script> -->
+<link href="https://r-spatial.github.io/mapview/articles/articles/mapview_02-advanced_files/PopupTable-0.0.1/popup.css" rel="stylesheet">
+
+
+
+<!-- leaflet.extras package / check https://github.com/bhaskarvk/leaflet.extras/tree/master/inst/htmlwidgets/build-->
+<!-- You may need to include new refs -->
+<!-- leaflet.extras package / heatmap -->
+<script src="https://dieghernan.github.io/js/leaflet_extras/lfx-heat/lfx-heat-prod.js"></script>
+<script src="https://dieghernan.github.io/js/leaflet_extras/lfx-heat/lfx-heat-bindings.js"></script>
+
+	<!-- End Leaflet -->
+	
+	<title>(CHI)2</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lte IE 8]><script src="/nsfc190018/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/nsfc190018/assets/css/main.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="/nsfc190018/assets/css/ie8.css" /><![endif]-->
+	<!--[if lte IE 9]><link rel="stylesheet" href="/nsfc190018/assets/css/ie9.css" /><![endif]-->
+
+
+</head>
+
+
+<body>
+    <!-- Page Wrapper -->
+<div id="page-wrapper">
+
+	<!-- Header -->
+	<header id="header" >
+		<div class="center">
+			
+	 <a href="/nsfc190018/en/Bujihe">English</a>  <a href="/nsfc190018/es/Bujihe/" align="center">Espa&ntilde;ol</a>
+	
+ </div>
+		<h1><a href="http://localhost:4000/nsfc190018/">(CHI)2</a></h1>
+		<nav id="nav">
+			<ul>
+				<li class="special">
+					<a href="#menu" class="menuToggle"><span>Menu</span></a>
+					<div id="menu">
+						<ul>
+						<li><a href="/nsfc190018/index.html">Home</a></li>
+						<li><a href="/nsfc190018/es/Integrantes.html">Integrantes</a></li>
+						<li><a href="/nsfc190018/es/Objetivos.html">Objetivos del Proyecto</a></li>
+						<li class="dropdown">
+	 								<a href="javascript:void(0)" class="dropbtn">Zona de estudio</a>
+	 								<div class="dropdown-content">
+									 	<span>  Chile:</span>
+		 							<a href="/nsfc190018/es/Petorca.html">Río Petorca en Longotoma</a>
+		 							<a href="/nsfc190018/es/Mapocho.html">Río Mapocho en los Almendros</a>
+		 							<a href="/nsfc190018/es/Cauquenes.html">Río Cauquenes en Desembocadura</a>
+									<a href="/nsfc190018/es/Trancura.html">Río Trancura antes de Llafenco</a>
+									<span>  China: </span>
+									<a href="/nsfc190018/es/Lechangxia.html">Lechangxia</a>
+									<a href="/nsfc190018/es/Baipenzhu.html">Baipenzhu River</a>
+									<a href="/nsfc190018/es/Bujihe.html">Bujihe</a>
+	 								</div>
+ 						</li>
+						<li class="dropdown">
+									<a href="javascript:void(0)" class="dropbtn">Modelación hidrológica</a>
+									<div class="dropdown-content">
+									<a href="/nsfc190018/es/Datos.html">Datos</a>
+									<a href="/nsfc190018/es/ModelosHidrologicos.html">Modelos hidrológicos</a>
+								</div>
+						</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+
+    <!-- Main -->
+    <article id="main">
+        <header>
+            <h2>Bujihe</h2>
+            <p></p>
+        </header>
+        <section class="wrapper style5">
+            <div class="inner">
+
+                <p>Bujihe ha experimentado una rápida urbanización en las últimas décadas. Los cambios bruscos de LULC han provocado cambios hidrológicos importantes, en particular inundaciones. La cuenca de captación de Bujihe se encuentra en la ciudad de Shenzhen, donde comenzó la reforma y apertura de la lista inicial de China a partir de 1978, con su desarrollo como una miniatura del desarrollo de China. Es el piloto ideal para estudiar el impacto de la urbanización en las inundaciones. Una red hidrológica que incluye las precipitaciones y el nivel del agua ha estado en funcionamiento durante algunos años y se agregará la observación del caudal del río a partir del próximo año.</p>
+
+<div id="htmlwidget-bbe5aad21ae06084e7bf" class="leaflet html-widget" style="width:100%;height:600px;"></div>
+<script type="application/json" data-for="htmlwidget-bbe5aad21ae06084e7bf">{"x":{"options":{"minZoom":1,"maxZoom":52,"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}},"preferCanvas":false,"bounceAtZoomLimits":false,"maxBounds":[[[-90,-370]],[[90,370]]]},"calls":[{"method":"addProviderTiles","args":["OpenStreetMap",1,"OpenStreetMap",{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addProviderTiles","args":["Esri.WorldImagery",2,"Esri.WorldImagery",{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addProviderTiles","args":["OpenTopoMap",3,"OpenTopoMap",{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addProviderTiles","args":["Esri.WorldImagery",4,"Esri.WorldImagery",{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"createMapPane","args":["polygon",420]},{"method":"addPolygons","args":[[[[{"lng":[114.09350741844,114.09350741844,114.093506868104,114.094382490316,114.094381379415,114.095256991295,114.09525643073,114.097883250758,114.097882674761,114.099633877676,114.100509479093,114.100510070548,114.104012496555,114.104013108648,114.104888720233,114.104888102987,114.105763709391,114.105762464681,114.108389252807,114.108388615038,114.10926420587,114.109262920116,114.110138500615,114.110137204677,114.111012774844,114.111011468723,114.111887028559,114.111887686755,114.112763251711,114.112763915088,114.114515055211,114.114515728921,114.117142454326,114.117141765164,114.118017335085,114.118018029399,114.118893604439,114.118894303937,114.120645464224,114.120644044657,114.12151961445,114.121518184711,114.12239374417,114.1223930242,114.123268578475,114.123267853387,114.12764559851,114.127646349349,114.128521903421,114.128522659444,114.129398218633,114.129399741084,114.130275310539,114.130274544145,114.132901236846,114.132900455036,114.134651573023,114.134650780948,114.135526334737,114.135524740394,114.134649196905,114.134646029255,114.133770506327,114.133768933016,114.134644445647,114.134643653898,114.135519161344,114.135518364483,114.136393866745,114.136394668755,114.138145683464,114.138144871159,114.142522381539,114.142519029742,114.143394511114,114.143393668114,114.144269144301,114.144267448123,114.142516516297,114.142514840859,114.140763929463,114.140761447466,114.141636887747,114.141634390657,114.14075896581,114.140758138667,114.139882718927,114.139881896966,114.139006482332,114.139005665552,114.138130256025,114.138128632864,114.137253233587,114.137252427205,114.13812782134,114.138127009853,114.140753176605,114.140752349727,114.141627733427,114.141625237595,114.140749869321,114.140749042595,114.141624405727,114.141619415319,114.14424541195,114.144244564928,114.145119891921,114.145119039799,114.145117335672,114.144242024098,114.144241177232,114.143365870758,114.143365029069,114.141614426283,114.141613594911,114.140738298599,114.140737472403,114.139862181192,114.139858897336,114.138983626638,114.138982810906,114.135481748292,114.135480953144,114.134605692536,114.134604112623,114.131978361401,114.131977586908,114.130227096188,114.130226332002,114.127600611069,114.127599113616,114.124973423187,114.124972689918,114.122347014593,114.122346296762,114.121471076723,114.12146965143,114.122344861201,114.122344143469,114.124969757178,114.124969024077,114.125844223445,114.125843485244,114.126718679445,114.126716449644,114.12759162841,114.127590880079,114.128466053678,114.128465300248,114.12934046868,114.1293381932,114.1302133462,114.130209528772,114.131084656081,114.131082350654,114.130207238735,114.130205712219,114.129330610525,114.129328336401,114.126703077275,114.126703819895,114.124953636716,114.124952904354,114.12232764472,114.122325493992,114.121450422767,114.121451134515,114.120576058129,114.120575351509,114.117950137542,114.117948064027,114.11619795199,114.116195909522,114.117070950175,114.117067521055,114.116192506032,114.116190464314,114.11706546396,114.117062036099,114.117937010092,114.117935628921,114.117060665174,114.117059979759,114.115310062417,114.115309387279,114.112684526402,114.112683866663,114.110059020881,114.110057087945,114.110932021202,114.110930722482,114.110055799468,114.110055155274,114.107430401419,114.107429772617,114.106554859728,114.106554236076,114.107429143844,114.107427886385,114.106552988858,114.106552365292,114.103052795379,114.103055811086,114.103930729209,114.103931337555,114.104806260771,114.10480871492,114.102183883726,114.102184481967,114.09868468617,114.098684108419,114.096059276659,114.096058714301,114.09255895875,114.092558416906,114.091683483077,114.0916840198,114.089934141825,114.089935194855,114.085560448277,114.085560949215,114.083811040176,114.083811530891,114.082061611516,114.082062572522,114.079437662556,114.079438127721,114.078563152565,114.078564072712,114.079439058115,114.079439988594,114.080314984225,114.080315454622,114.082940456757,114.082942400063,114.082067378872,114.082067859628,114.08381791224,114.083818894324,114.082943857777,114.082944343726,114.082069302029,114.08207026374,114.08294531569,114.082946773805,114.083821841116,114.083823806094,114.08294871827,114.082949690636,114.082074592532,114.082075073619,114.080324867084,114.080324396256,114.078574199894,114.078573739346,114.077698646263,114.077699557122,114.075949350375,114.075950240798,114.075075127135,114.075075567247,114.07595068604,114.075951131303,114.076826255207,114.07682670562,114.075951576586,114.075952021889,114.076827156055,114.07682760651,114.075952467213,114.075952912558,114.075077768109,114.075078208343,114.075953357922,114.075953803307,114.075078648596,114.075079529163,114.074204364167,114.074204799348,114.0733296292,114.073330059269,114.072454883968,114.072455308923,114.070704947997,114.070705362705,114.068954991437,114.068955395897,114.068080205102,114.068080604447,114.067205408499,114.067205802729,114.065455400512,114.065455784491,114.063705371936,114.063706119409,114.062830902837,114.062831640109,114.061081186373,114.061082620034,114.062833114856,114.06283385233,114.063709109989,114.063709483888,114.064584746666,114.06458512572,114.065460393617,114.065460777826,114.066336050843,114.066336440206,114.069837552643,114.069837962575,114.071588528958,114.071588949184,114.070713660865,114.070715321409,114.072465939137,114.072466364599,114.073341678573,114.073342109194,114.074217428288,114.074217864068,114.075968512474,114.075968958554,114.079470275678,114.079470742339,114.080346076707,114.080346548529,114.081221888016,114.081222842006,114.082098191752,114.082099638324,114.082975003472,114.082975490849,114.083850861116,114.083851353657,114.084726729044,114.084728720003,114.085604115937,114.08560512184,114.086480528037,114.08648154432,114.087356960781,114.087357987445,114.087359014202,114.086483577164,114.086484593725,114.085609146373,114.085609649543,114.083858744478,114.08385923738,114.082108321934,114.082108804567,114.081233341664,114.081233819173,114.080358351103,114.080359295892,114.081234774256,114.081237640029,114.080362130781,114.080363548517,114.081239073211,114.081240984426,114.083867620167,114.083868113476,114.085619214157,114.085619717788,114.088246384088,114.088246903193,114.087371342633,114.087374426858,114.088250018325,114.088251576212,114.089127183112,114.089128232128,114.09000384931,114.090004908729,114.09350741844],"lat":[22.6509253963302,22.6509253963302,22.6501126691331,22.650112155948,22.6484867013477,22.6484861834206,22.6476734560175,22.6476718736023,22.6468591461798,22.6468580673662,22.6468575207857,22.6476702481435,22.6476680139086,22.6484807410952,22.6484801705573,22.6476674433934,22.6476668680955,22.6460414135665,22.6460396591169,22.6452269317986,22.6452263374413,22.6436008826051,22.6436002835134,22.6419748283955,22.6419742245702,22.6403487691711,22.6403481606129,22.6411608883294,22.641160274966,22.6419730025757,22.6419717614562,22.6427844889343,22.64278259132,22.6419698639174,22.641969221842,22.642781949219,22.6427813023366,22.6435940296055,22.6435927214442,22.641967266928,22.6419666057275,22.6403411509346,22.6403404850058,22.6395277575123,22.6395270868294,22.6387143592803,22.6387109342913,22.6395236617041,22.6395229623369,22.6403356896396,22.6403349854638,22.641960439766,22.6419597307529,22.6411470036711,22.64114484803,22.6403321209517,22.6403306600104,22.6395179329079,22.6395171952953,22.6378917409019,22.6378924784559,22.6346415685639,22.6346423012209,22.6330168457226,22.633016113124,22.6322033852806,22.6322026479321,22.6313899200357,22.6313891779378,22.6322019058047,22.6322004072129,22.6313876794057,22.6313838494469,22.6281329380047,22.6281321578009,22.6273194297656,22.627318644815,22.6256931885601,22.625694753559,22.6240692968503,22.6240708426162,22.6216326567514,22.621631886349,22.6191936998356,22.6191944701461,22.618381741113,22.618382506617,22.6175697774713,22.6175705381693,22.616757808911,22.6167585648033,22.6151331059797,22.6151338570368,22.6143211274717,22.6143203764444,22.613507646827,22.6135053651874,22.6126926355785,22.6126918655134,22.6102536762853,22.6102544462583,22.6094417163204,22.6094409463781,22.6045645652075,22.6045622272975,22.6037494969077,22.6037487080908,22.6029359776502,22.6013105165224,22.601311305245,22.6004985745263,22.600499358446,22.5996866276138,22.5996881810766,22.5988754501003,22.598876219644,22.5980634885549,22.5980642532969,22.5948133279963,22.5948140878462,22.5940013562852,22.5940043478636,22.5931916161013,22.5931923520414,22.5915668882114,22.5915690672392,22.590756335114,22.590757763895,22.5899450316306,22.5899471389485,22.5883216740053,22.5883237382368,22.5875110055597,22.5875130267922,22.5867002939523,22.586700958133,22.5850754921536,22.5850748280259,22.5842620949395,22.5842600740293,22.5834473409412,22.5834466577962,22.5826339246532,22.5826332367681,22.5801950369285,22.5801943443587,22.5793816109422,22.5793809136334,22.5785681801625,22.5785674781152,22.5761292772935,22.5761285705643,22.572064901026,22.5720641896728,22.5696259870492,22.5696266983173,22.5680012294342,22.5680019358816,22.5655637318565,22.5655658223648,22.5663785572053,22.5663799271152,22.56556719222,22.5655692112774,22.5631310058574,22.5631316692704,22.5639444045189,22.5639450631954,22.5631323279205,22.563134275294,22.5606960687437,22.5606973430261,22.5582591355843,22.5582585009003,22.5541948203155,22.554195454873,22.5517572454611,22.5517566109797,22.5476929271118,22.5476922879977,22.5460668139272,22.5460674529902,22.5452547158062,22.5452559796053,22.5444432422889,22.5444451022235,22.5436323647507,22.5436341817866,22.5411959686585,22.5411953678101,22.5395698920292,22.5395704928296,22.5387577547921,22.5387595285785,22.5379467903881,22.5379473721128,22.5371346338171,22.5371340521156,22.5355085753247,22.5355091569797,22.5346964184379,22.534698697403,22.5387623897466,22.5387618270272,22.5395745652274,22.5395739977282,22.5428249496178,22.5428266381129,22.5436393759476,22.5436415607484,22.5428288228265,22.5428304114018,22.5420176733344,22.5420197247396,22.5412069865083,22.5412074874448,22.5420202256962,22.5420212133356,22.5436466896709,22.5436490756966,22.5444618138365,22.5444627349756,22.5452754730702,22.5452763752113,22.5469018512265,22.5469031688534,22.5477159067904,22.5477163364985,22.5493418121608,22.5493413824185,22.5509668577183,22.5509664231816,22.5517791606911,22.551777828468,22.5550287774725,22.5550292263787,22.5558419634425,22.5558410608331,22.5574665346426,22.5574669883641,22.5582797251637,22.5582801741416,22.5599056475306,22.5599051985169,22.5623434079309,22.5623429541008,22.5655938987644,22.5655943526669,22.5672198245423,22.5672202737172,22.5680330095497,22.5680338936435,22.5672211577758,22.5672220227791,22.5664092867947,22.5664097121337,22.5680351840542,22.5680360205081,22.5696614921668,22.5696619032806,22.5704746390032,22.570474227873,22.5712869634972,22.5712865475859,22.5720992831112,22.5720996990391,22.572912434499,22.5729120185545,22.5737247539156,22.5737251698767,22.5745379051723,22.5745383163844,22.5753510516143,22.5753506403857,22.5761633755171,22.576163786762,22.5777892568111,22.5777896633226,22.5786023982401,22.5786028000013,22.5794155348527,22.5794159318633,22.5802286666484,22.5802294464007,22.5810421811348,22.58104294185,22.5818556765323,22.5818560497542,22.5826687843692,22.5826691528386,22.5834818873861,22.5834826100515,22.5842953445457,22.5842960481687,22.5859215169667,22.5859218616539,22.5875473301507,22.5875480052746,22.5907989413899,22.5907982661584,22.5924237336692,22.592423388872,22.5932361224904,22.5932357729095,22.5940485064318,22.5940481520669,22.5948608854929,22.5948605263437,22.5956732596731,22.5956717753143,22.5964845085024,22.5964837376696,22.5972964707448,22.597296858562,22.6005477901028,22.6005470095731,22.6013597422217,22.6013593447836,22.6021720773341,22.6021716751083,22.6029844075606,22.6029835887603,22.6037963210978,22.6037946261636,22.6046073583513,22.6046069226696,22.6054196547578,22.6054192142859,22.6070446781805,22.6070442329004,22.6094824280724,22.6094819779655,22.610294709507,22.6102942546083,22.6111069860496,22.6111065263586,22.614357451228,22.614356986689,22.6159824485933,22.6159819792421,22.6176074407799,22.6176069666157,22.6192324277868,22.6208578886289,22.6208583628686,22.6224838234194,22.6224842929202,22.6232970230908,22.623297947799,22.6241106779242,22.6241115835608,22.6249243136398,22.6249247593102,22.6257374893247,22.6257379302353,22.6273633900525,22.6273629491068,22.6322393264783,22.6322397675294,22.6346779551569,22.6346775140532,22.6379284296674,22.6379270774635,22.6387398061075,22.6387388806998,22.6395516092246,22.6395501852024,22.6403629135883,22.6403633930622,22.645239761763,22.6452392821746,22.6476774653563,22.6476769809282,22.6493024359324,22.6493019466827,22.6509274013186,22.6509253963302]}]]],null,"Bujihe Catchment",{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}},"pane":"polygon","stroke":true,"color":"#333333","weight":1,"opacity":0.9,"fill":true,"fillColor":"#008B00","fillOpacity":0.1,"smoothFactor":1,"noClip":false},null,{"maxWidth":800,"minWidth":50,"autoPan":true,"keepInView":false,"closeButton":true,"closeOnClick":true,"className":""},"1",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},{"stroke":true,"weight":2,"opacity":0.9,"fillOpacity":0.14,"bringToFront":false,"sendToBack":false}]},{"method":"addScaleBar","args":[{"maxWidth":100,"metric":true,"imperial":true,"updateWhenIdle":true,"position":"bottomleft"}]},{"method":"addLayersControl","args":[["OpenStreetMap","Esri.WorldImagery","OpenTopoMap","Esri.WorldImagery"],"Bujihe Catchment",{"collapsed":true,"autoZIndex":true,"position":"topleft"}]},{"method":"addLegend","args":[{"colors":["#008B00"],"labels":["1"],"na_color":null,"na_label":"NA","opacity":1,"position":"topright","type":"factor","title":"","extra":null,"layerId":null,"className":"info legend","group":"Bujihe Catchment"}]}],"limits":{"lat":[22.5346964184379,22.6509274013186],"lng":[114.061081186373,114.145119891921]}},"evals":[],"jsHooks":{"render":[{"code":"function(el, x, data) {\n  return (\n      function(el, x, data) {\n      // get the leaflet map\n      var map = this; //HTMLWidgets.find('#' + el.id);\n      // we need a new div element because we have to handle\n      // the mouseover output separately\n      // debugger;\n      function addElement () {\n      // generate new div Element\n      var newDiv = $(document.createElement('div'));\n      // append at end of leaflet htmlwidget container\n      $(el).append(newDiv);\n      //provide ID and style\n      newDiv.addClass('lnlt');\n      newDiv.css({\n      'position': 'relative',\n      'bottomleft':  '0px',\n      'background-color': 'rgba(255, 255, 255, 0.7)',\n      'box-shadow': '0 0 2px #bbb',\n      'background-clip': 'padding-box',\n      'margin': '0',\n      'padding-left': '5px',\n      'color': '#333',\n      'font': '9px/1.5 \"Helvetica Neue\", Arial, Helvetica, sans-serif',\n      'z-index': '700',\n      });\n      return newDiv;\n      }\n\n\n      // check for already existing lnlt class to not duplicate\n      var lnlt = $(el).find('.lnlt');\n\n      if(!lnlt.length) {\n      lnlt = addElement();\n\n      // grab the special div we generated in the beginning\n      // and put the mousmove output there\n\n      map.on('mousemove', function (e) {\n      if (e.originalEvent.ctrlKey) {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                           ' lon: ' + (e.latlng.lng).toFixed(5) +\n                           ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                           ' | zoom: ' + map.getZoom() +\n                           ' | x: ' + L.CRS.EPSG3857.project(e.latlng).x.toFixed(0) +\n                           ' | y: ' + L.CRS.EPSG3857.project(e.latlng).y.toFixed(0) +\n                           ' | epsg: 3857 ' +\n                           ' | proj4: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs ');\n      } else {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                      ' lon: ' + (e.latlng.lng).toFixed(5) +\n                      ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                      ' | zoom: ' + map.getZoom() + ' ');\n      }\n      });\n\n      // remove the lnlt div when mouse leaves map\n      map.on('mouseout', function (e) {\n      var strip = document.querySelector('.lnlt');\n      strip.remove();\n      });\n\n      };\n\n      //$(el).keypress(67, function(e) {\n      map.on('preclick', function(e) {\n      if (e.originalEvent.ctrlKey) {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                      ' lon: ' + (e.latlng.lng).toFixed(5) +\n                      ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                      ' | zoom: ' + map.getZoom() + ' ');\n      var txt = document.querySelector('.lnlt').textContent;\n      console.log(txt);\n      //txt.innerText.focus();\n      //txt.select();\n      setClipboardText('\"' + txt + '\"');\n      }\n      });\n\n      }\n      ).call(this.getMap(), el, x, data);\n}","data":null}]}}</script>
+
+<!--
+<br/>
+<br/>
+
+<section>
+<div class="box alt">
+  <div class="row uniform 50%">
+    <div class="4u"><span class="image fit"><img src="assets/images/cauquenes_1.jpg" alt="" /></span></div>
+    <div class="4u"><span class="image fit"><img src="assets/images/cauquenes_5.jpg" alt="" /></span></div>
+    <div class="4u"><span class="image fit"><img src="assets/images/cauquenes_7.jpg" alt="" /></span></div>
+  </div>
+</div>
+</section>
+
+-->
+
+
+            </div>
+        </section>
+    </article>
+
+    <!-- Footer -->
+<footer id="footer">
+	<section class="ft-main">
+    <div class="ft-main-item">
+      <h3 >Mapa del Sitio</h3>
+      <ul>
+				<li><a href="/nsfc190018/es/index.html">Home</a></li>
+				<li><a href="/nsfc190018/es/Integrantes.html">Integrantes</a></li>
+				<li><a href="/nsfc190018/es/Objetivos.html">Objetivos del Proyecto</a></li>
+				<li><a href="/nsfc190018/es/Petorca.html">Río Petorca en Longotoma</a></li>
+				<li>	<a href="/nsfc190018/es/Mapocho.html">Río Mapocho en los Almendros</a></li>
+				<li>	<a href="/nsfc190018/es/Cauquenes.html">Río Cauquenes en Desembocadura</a></li>
+				<li>	<a href="/nsfc190018/es/Trancura.html">Río Trancura antes de Llafenco</a></li>
+			<li>		<a href="/nsfc190018/es/ModelosHidrologicos.html">Modelos hidrológicos</a></li>
+					<li>	<a href="/nsfc190018/es/Datos.html">Datos</a></li>
+
+      </ul>
+    </div>
+  </section>
+
+
+
+	<ul class="icons">
+		
+		<li><a href="https://www.researchgate.net/profile/Mauricio_Zambrano-Bigiarini" class="fab fa-researchgate" target="_blank"><span class="label">RG</span></a></li>
+		         
+	</ul>
+	<ul class="copyright">
+		<li>&copy; (CHI)2</li>
+		<li>Build: Jekyll.</li>
+	</ul>
+</footer>
+
+
+</div>
+
+<!-- Scripts -->
+<script src="http://localhost:4000/nsfc190018/assets/js/jquery.min.js"></script>
+<script src="http://localhost:4000/nsfc190018/assets/js/jquery.scrollex.min.js"></script>
+<script src="http://localhost:4000/nsfc190018/assets/js/jquery.scrolly.min.js"></script>
+<script src="http://localhost:4000/nsfc190018/assets/js/skel.min.js"></script>
+<script src="http://localhost:4000/nsfc190018/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="http://localhost:4000/nsfc190018/assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="http://localhost:4000/nsfc190018/assets/js/main.js"></script>
+
+</body>
+
+</html>
+
+
+</body>
+
+</html>

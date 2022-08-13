@@ -32,7 +32,7 @@
 <loc>http://localhost:4000/Cauquenes-en/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/_pages/es/Cauquenes/</loc>
+<loc>http://localhost:4000/Cauquenes/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/Datos/</loc>
@@ -56,7 +56,7 @@
 <loc>http://localhost:4000/Mapocho-en/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/_pages/es/Mapocho/</loc>
+<loc>http://localhost:4000/Mapocho/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/ModelosHidrologicos-en/</loc>
@@ -83,7 +83,7 @@
 <loc>http://localhost:4000/Posts/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/_pages/es/Trancura/</loc>
+<loc>http://localhost:4000/Trancura/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/Trancura-en/</loc>

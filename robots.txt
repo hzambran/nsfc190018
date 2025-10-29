@@ -1,1 +1,1 @@
-Sitemap: https://chi2.ufro.cl/sitemap.xml
+Sitemap: ufro.cl/sitemap.xml
